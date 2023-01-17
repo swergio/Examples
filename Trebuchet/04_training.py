@@ -35,7 +35,7 @@ HEADER_LENGTH = 10
 # For the trainer we first define a constant variable TRAIN_STEPS with the number of total training steps we want to run through once the script is executed.
 # We then initiate a mutable number as step counter to track how many steps we've already been through. This variable needs to be mutable since we will update the value in side the handler function context.
 # Including the step_counter we can initialize the swergio client.
-# Finally we also define a loss function we will use to calculate the gradient between actual and achieved target als well as the memory dictionary we will use to store the send targets until we get the results.
+# Finally we define a loss function, which we will use to calculate the gradient between actual and achieved target as well as the memory dictionary, which we will use to store the send targets until we get the results.
 
 # %%
 

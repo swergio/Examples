@@ -88,7 +88,7 @@ client.add_eventHandler(inference,MESSAGE_TYPE.DATA.CUSTOM,responseRooms='evolut
 
 # Since we want to be able to train our model constantly, we will also implement the handler for such a training loop.
 # First let's define the forward pass we will take when we receive training data.
-# For this we wil take the data from the 'traininput' room pass them through our network and sending back the results to 'trainoutput' while storing the received dat in our internal memory.
+# For this we will take the data from the 'traininput' room pass them through our network and sending back the results to 'trainoutput' while storing the received dat in our internal memory.
 
 # %%
 def torch_forward(msg,model, memory):

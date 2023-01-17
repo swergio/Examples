@@ -17,7 +17,7 @@ from music_generator import *
 # Of course we can also just start each component one by one by just running the according script.
 
 # The swarm class requires a swarm.yaml file, that contains the specification about each component most importantly the path to each script.
-# Once the YAML is defined we run each component at once by instantiating a swarm object and calling the start() method.
+# Once the YAML is defined we run each component at once by instantiating a swarm object and calling the swarm.start() method.
 
 # %%
 swarm = Swarm()

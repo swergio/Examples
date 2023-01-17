@@ -10,8 +10,8 @@ settings:
   terminal_cmd: "xterm -fs 14 -fa DejaVuSansMono -hold -e" # execution of file will be added
 ###
 # Each component need to have a unique name and a provided filepath to the source code.
-# Optional a parameter "delay" can be provided which will result in a n-second delay until the next component of the list is started. This can be useful to ensure that for example the server is up and running.
-# We can also add separate settings (python_envpath, python_cmd, terminal_cmd) to the component to overwrite the general settings. 
+# Optional a "delay" parameter can be provided which will result in a n-second delay until the next component of the list is started. This can be useful to ensure that for example the server is up and running.
+# We can also add individual settings (python_envpath, python_cmd, terminal_cmd) to the component to overwrite the general settings. 
 ###
 components:
   server:

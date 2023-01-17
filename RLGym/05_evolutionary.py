@@ -30,7 +30,7 @@ HEADER_LENGTH = 10
 
 # %%[markdown]
 
-# Now we have to define how our evolutionary algorithm should select and create new populations.
+# Now we have to define how our evolutionary algorithm, which will select and create new populations.
 # First we define the genome size, which in our case needs to be the number of weights of our policy network. The evolutionary algorithm will change the genome/network weights and there fore provide us with a new policy.
 # We also define the numbers of models we'll have in our network as well as probabilities how often  the algorithm will mate or mutate our genomes.
 
@@ -107,7 +107,7 @@ def load(population,weights_dict):
 # We now define the handler function to gather the weights and contribution information and once everything is available to start the evolution.
 # If we receive a message in the 'evolution' room with the weights or the contribution we store the infos accordingly in our memory dicts.
 # When both dictionaries have all required information we start the evolution process by loading the weight to the population, evaluating each individual by contribution, selecting the best individuals and finally vary the pool of individuals to get a new generation.
-# With the new generation we send the convert the genomes back to weights and send them back to the models to update there neural networks.
+# With the new generation we convert the genomes back to weights and send them back to the models to update there neural networks.
 # We also send a message to the 'control' room with th information that the evolutionary step is done.
 
 # %%

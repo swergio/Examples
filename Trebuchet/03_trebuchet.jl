@@ -28,7 +28,7 @@ PORT = 8080
 HEADER_LENGTH = 10
 
 #=
-Now we define a wraper of the shoot function of the Trebuchet package.
+Now we define a wrapper of the shoot function of the Trebuchet package.
 
 Our function will take the wind as parameter.
 As well as logits for the angle of the trebuchet as well as the counter weight.
@@ -44,9 +44,9 @@ end
 shoot(ps) = forwarddiff(p -> shoot(p...), ps)
 
 #=
-After we defined a couple of variable and functions we can instatiate the swergio client by provding the required settings.
+After we defined a couple of variable and functions we can instantiate the swergio client by providing the required settings.
 
-We also instatiate a memory dictionary to store the data we recieved on the forward path to refere to them in our backward path.
+We also instantiate a memory dictionary to store the data we received on the forward path to refer to them in our backward path.
 =#
 
 client = swergio.ClientModule.Client(COMPONENT_NAME,SERVER,PORT; header_length = HEADER_LENGTH)
@@ -63,7 +63,7 @@ Such a function requires the "msg" as first parameter, which contains the all me
 
 The forward function of our component will receive the wind speed, the trebuchet angle and the counter weight in the "DATA" entry of the message.
 We convert this data into a format our shoot function can handle and then return the result in our new message in the "DATA" entry.
-Meanwhile we alsoe store the received data in our memory dictionary with the key based on the reply message id. Once we get a reply to this message with the gradient information we can retrieve the original data.
+Meanwhile we also store the received data in our memory dictionary with the key based on the reply message id. Once we get a reply to this message with the gradient information we can retrieve the original data.
 
 Finally we add a new event handler to our client object.
 This includes the defined function that is executed when the handler is active as well as the MESSAGE_TYPE and response ROOM of our response message. 
@@ -101,7 +101,7 @@ In this case the "DATA" entry of our message will contain gradient information.
 
 To get the gradient of our shoot function we retrieve the according forward data from our memory. 
 With the gradient information of our output we can then calculate the gradient of the trebuchet shoot function in respect to the input data.
-These innformation we send down to the control model via message. 
+These information we send down to the control model via message. 
     
 The event handler for our backward pass is set up to handle all DATA.GRADIENT type messages from the 'output' room and send the reply message as DATA.GRADIENT to the 'model' room.
 =#

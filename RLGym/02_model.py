@@ -46,7 +46,7 @@ HEADER_LENGTH = 10
 # We can now define the RL model using stable_baselines3 methods.
 # First we have to define the observation and action space. These values are dependent on the gym environment we are using. In this case the "CartPole-v1".
 # We can then create our policy class including our desired learning rate and the architecture of the used policy network.
-# Last we set up the RolloutBuffer to store the observation, action, reward information for our training. In thise example we choose the size of the buffer to be 5, which means we will train our policy every 5 steps in the environment.
+# Last we set up the RolloutBuffer to store the observation, action, reward information for our training. In this example we choose the size of the buffer to be 5, which means we will train our policy every 5 steps in the environment.
 # %%
 # Define model
 OBS_SPACE = gym.spaces.Box(
@@ -193,7 +193,7 @@ client.add_eventHandler(forward,MESSAGE_TYPE.DATA.CUSTOM,responseRooms='logits',
 # This evolutionary component is running separately and will just communicate the weights via message.
 # To enable this functionality here in our model component, we will first define two helper functions that can convert a pytorch model weights from and to a list/vector.
 
-# The firs function model_weights_as_vector takes a pytorch model and provides the models weights as list. 
+# The first function model_weights_as_vector takes a pytorch model and provides the models weights as list. 
 # The second function model_weights_as_dict requires a define pytorch model and the weights as list and will return a dictionary of the weights, that we can use to load into the model.
 # %%
 

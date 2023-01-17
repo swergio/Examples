@@ -75,7 +75,7 @@ client = Client(COMPONENT_NAME,SERVER,PORT,FORMAT,HEADER_LENGTH,
 # %%[markdown]
 
 # We will also define two helper functions. 
-# One two read the CSV file with already labeled data an the other to be abl to split our stored labeled data dictionary into separate batches.
+# One two read the CSV file with already labeled data an the other to be able to split our stored labeled data dictionary into separate batches.
 
 # %%
 ## LOAD LABELD DATA
@@ -93,7 +93,7 @@ def take(n, iterable, s = 0):
 # TRAINING
 
 # Let's first define the logic to handle the training loop including sending training data to the evaluation network and providing gradient feedback based on the actual label.
-# We therefore define a helper function that generates a new massage. I will take a batch out of ou dictionary with the labeled data and then sends the data to 'traininput' while storing the label in memory.
+# We therefore define a helper function that generates a new massage. I will take a batch out of our dictionary with the labeled data and then sends the data to 'traininput' while storing the label in memory.
 
 # %%
 def new_msg(dict_labeled, batch_counter):
@@ -137,7 +137,7 @@ client.add_eventHandler(new_data,MESSAGE_TYPE.DATA.FORWARD,responseRooms='traini
 
 # %%[markdown]
 
-# To provide the gradient feedback to the evaluation network we will add a event handler that will take the result from the 'trainoutput', calculates the loss based on the actual label w stored in our memory dict and then return the gradient in respect to the predicted label.
+# To provide the gradient feedback to the evaluation network we will add a event handler that will take the result from the 'trainoutput', calculates the loss based on the actual label we stored in our memory dict and then return the gradient in respect to the predicted label.
 
 
 # %%
@@ -174,8 +174,8 @@ def get_unlabeled_for_labeling(dict_unlabeled):
 # %%[markdown]
 
 # Now we can define the handler that will ask for new labels from the user.
-# We will monitor the  message in 'evolution' and will store the results of the evaluation model in ou unlabeled data dictionary including the calculated uncertainty of the prediction.
-# Once thi dictionary has the desired amount of data, we will pick the data points with highest uncertainty and send them to be labeled to the 'user'.
+# We will monitor the  message in 'evolution' and will store the results of the evaluation model in our unlabeled data dictionary including the calculated uncertainty of the prediction.
+# Once this dictionary has the desired amount of data, we will pick the data points with highest uncertainty and send them to be labeled to the 'user'.
   
 # %%
 def label_data(msg, dict_unlabeled, dict_labeled, batch_counter,nr_of_batches, istraining ):
