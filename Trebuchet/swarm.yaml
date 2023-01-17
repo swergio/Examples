@@ -1,0 +1,26 @@
+###
+# This YAML file contains all the information about the general settings as well as the separate components, that will be started by the swarm controller from the swergio toolbox.
+# For the general settings we can define the paths to the environments used to execute the python or julia codes.
+# We can also add the command used to run python files, which is in default mode "python", but could be "python3".
+# And lastly we can define a command we'll use to run the component in a terminal. If this command is not provided the code is run without of a terminal.
+###
+settings:
+  julia_envpath: "." # path to julia Project.toml to be used
+  python_envpath: "./venv/bin/" #  path to executable "python" in virtual environment folder 
+  python_cmd: "python" # (default) or "python3"
+  terminal_cmd: "xterm -fs 14 -fa DejaVuSansMono -hold -e" # execution of file will be added
+###
+# Each component need to have a unique name and a provided filepath to the source code.
+# Optional a parameter "delay" can be provided which will result in a n-second delay until the next component of the list is started. This can be useful to ensure that for example the server is up and running.
+# We can also add separate settings (julia_envpath, python_envpath, python_cmd, terminal_cmd) to the component to overwrite the general settings. 
+###
+components:
+  server:
+    filepath: "01_server.py"
+    delay: 5 # delay after starting server.py by 5 seconds
+  model:
+    filepath: "02_controlmodel.py"
+  trebuchet:
+    filepath: "03_trebuchet.jl"
+
+
